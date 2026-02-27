@@ -1,50 +1,8 @@
 # Jacobi Method Toolbox
 
-A MATLAB® toolbox that provides a robust implementation of the **Jacobi iterative method** for solving large-scale systems of linear equations. The toolbox supports both standard MATLAB arrays and **distributed arrays**, enabling parallel computation via MATLAB Parallel Computing Toolbox.
+A MATLAB® toolbox implementing the **Jacobi iterative method** for solving systems of linear equations. The toolbox supports both standard MATLAB arrays and **distributed arrays**, enabling large-scale parallel computation via MATLAB Parallel Computing Toolbox.
 
----
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-  - [Syntax](#syntax)
-  - [Input Arguments](#input-arguments)
-  - [Output Arguments](#output-arguments)
-  - [Convergence Flags](#convergence-flags)
-- [Examples](#examples)
-  - [Basic Usage](#basic-usage)
-  - [Distributed Array Usage](#distributed-array-usage)
-- [Testing](#testing)
-- [License](#license)
-
----
-
-## Overview
-
-The **Jacobi Method** is a classical iterative algorithm for solving a system of linear equations of the form:
-
-```
-A·x = b
-```
-
-where `A` is an *n×n* square coefficient matrix and `b` is a column vector of length *n*. The method converges when `A` is **strictly row diagonally dominant**.
-
-This toolbox exposes a `jacobi` function with an interface consistent with MATLAB's built-in iterative solvers (e.g., `pcg`, `gmres`), including support for tolerance, maximum iterations, initial guess, and detailed output flags.
-
----
-
-## Features
-
-- ✅ Solves dense or sparse linear systems `A·x = b` using the Jacobi iterative method
-- ✅ Supports **single** and **double** precision floating-point inputs
-- ✅ Full support for **distributed arrays** (MATLAB Parallel Computing Toolbox)
-- ✅ Configurable tolerance, maximum iterations, and initial guess
-- ✅ Returns convergence flag, relative residual, iteration count, and residual history
-- ✅ Interface consistent with MATLAB built-in iterative solvers
+The `jacobi` function exposes an interface consistent with MATLAB's built-in iterative solvers (e.g., `pcg`, `gmres`). The matrix `A` must be square and should be **strictly row diagonally dominant** to guarantee convergence.
 
 ---
 
